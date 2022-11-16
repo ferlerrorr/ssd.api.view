@@ -127,8 +127,10 @@ function order() {
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
-      console.log(xhr.status);
-      console.log(xhr.responseText);
+
+      var jsonResponse = JSON.parse(xhr.responseText);
+      // window.location.replace(jsonResponse.draft_order.invoice_url);
+      window.open(jsonResponse.draft_order.invoice_url);
     }
   };
 
@@ -154,6 +156,6 @@ function order() {
                    }
           }`;
 
-  sleep(10);
+  sleep(5);
   xhr.send(data);
 }
