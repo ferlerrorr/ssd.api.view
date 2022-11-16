@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+        integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="conatainer-fluid">
+        <div class="container prescript">
+            <div class="close-button"><span class="material-symbols-outlined">
+                    close
+                </span></div>
+            <div class=" col-header-presc">
+
+                <div class=" row1-header-presc container">
+                    <div class="title-1">
+                        <div class="ss">
+                            <h3>Maxicare</h3>
+                            <p class="ttl">Maxicare Telemedecine</p>
+                        </div>
+                        <div class="dd">
+                            <p class="address">203 Maxicare Tower Salcedo Street Legazpi Village Makati City 1229</p>
+                            <p class="tel-no">(02)852-1980</p>
+                        </div>
+                        <h4 class="epres">
+                            E-Prescription
+                        </h4>
+                        <p class="heading">Transaction Reference:</p>
+                        <p class="heading">Date/Time:</p>
+                    </div>
+                    <div class="title-2">
+                        <img src="1200px-QR_Code_Example.svg.png" alt="">
+
+                        <a href="#">Order online from Southstar Drug</a>
+
+                        <button onclick="order()">Order Now</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pdtails-cont container">
+                <div class="pdtails-col-1">
+                    <p class="bord-right">Patient Name : &nbsp; <input type="text"></p>
+                    <p>Contact No : &nbsp; <input type="text"></p>
+                </div>
+                <div class="pdtails-col-2">
+                    <p class="bord-right">DOB/Sex : &nbsp; <input type="text"> </p>
+                    <p>Email : &nbsp; <input type="text"></p>
+                </div>
+                <div class="pdtails-col-3">
+                    <p class="bord-right">Policy No : &nbsp; <input type="text"></p>
+                    <p>Address : &nbsp; <input type="text"> </p>
+                </div>
+            </div>
+
+
+            <h4 class="epres">
+                Rx <p>-- Note <strong>Total</strong> number can be adjusted for the number purchase</p>
+            </h4>
+            <table class="tbl container">
+                <tr>
+                    <th>Generic</th>
+                    <th>Brand</th>
+                    <th>Dosage</th>
+                    <th>Form</th>
+                    <th>Qty</th>
+                    <th>Frequency</th>
+                    <th>Days</th>
+                    <th>Total</th>
+                    <th>Availability</th>
+                    <th>Maintenance</th>
+                    <th>Sig</th>
+                </tr>
+                <tr>
+                    <td class="txtarea-con"><textarea class="txtarea" placeholder="Band Aid"></textarea></td>
+                    <td>
+                        <input type="text" class="productId" name="productId" id="pid1" value="7996521218342" disabled>
+                    </td>
+                    <td>250mg</td>
+                    <td>Tablet</td>
+                    <td>1</td>
+                    <td>Every 3 Hrs</td>
+                    <td>2</td>
+                    <td class="quantity-cont">
+                        <input class="quantity" type="number" value="12" name="quantity1" id="quantity1">
+                    </td>
+                    <td><label class="availability" id="availability1">
+                        </label>
+                    </td>
+                    <td>No</td>
+                    <td>Take 1 tablet every 3 Hrs</td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea class="txtarea" placeholder="Biogesic" value="7996083306790"></textarea>
+                    </td>
+                    <td> <input type="text" class="productId" name="productId" id="pid2" value="7996083306790" disabled>
+                    </td>
+                    <td>250mg</td>
+                    <td>Tablet</td>
+                    <td>1</td>
+                    <td>Every 3 Hrs</td>
+                    <td>2</td>
+                    <td class="quantity-cont">
+                        <input class="quantity" type="number" value="99" name="quantity2" id="quantity2">
+                    </td>
+                    <td><label class="availability" id="availability2"></label></td>
+                    <td>No</td>
+                    <td>Take 1 tablet every 3 Hrs</td>
+                </tr>
+                <tr>
+                    <td><textarea class="txtarea" placeholder="Mefenamic Acid"></textarea></td>
+                    <td> <input type="text" class="productId" name="productId" id="pid3" value="7996519612710" disabled>
+                    </td>
+                    <td>250mg</td>
+                    <td>Tablet</td>
+                    <td>1</td>
+                    <td>Every 3 Hrs</td>
+                    <td>2</td>
+                    <td class="quantity-cont">
+                        <input class="quantity" type="number" name="quantity3" id="quantity3" value="58">
+                    </td>
+                    <td><label class="availability" id="availability3">
+                        </label></td>
+                    <td>No</td>
+                    <td>Take 1 tablet every 3 Hrs</td>
+                </tr>
+            </table>
+
+
+            <div class="pdtails-cont signee container">
+                <h5>
+                    Certified By
+                </h5>
+                <div class="pdtails pdtails-col-1">
+                    <p>Doctor Name : &nbsp; <input type="text"></p>
+
+                </div>
+                <div class="pdtails pdtails-col-2">
+                    <p>PRC No : &nbsp; <input type="text"> </p>
+
+                </div>
+                <div class="pdtails pdtails-col-3">
+                    <p>PTR No : &nbsp; <input type="text"></p>
+                </div>
+
+                <div class="pdtails pdtails-col-3">
+                    <p>S2 No : &nbsp; <input type="text"></p>
+                </div>
+
+                <div class="pdtails pdtails-col-3">
+                    <p>S2 Validity : &nbsp; <input type="text"></p>
+                </div>
+            </div>
+
+            <div class="notice">
+                <h3>IMPORTANT NOTICE</h3>
+                <p class="ttl-align">
+                    This e-Prescription was issued following a consultation via
+                </p>
+
+            </div>
+            <p class="pnotice">
+                Telemedecine. While All necessary steps were Taken to arrive at the best possible diagnosis and
+                recommendation,
+                all partiesare advised that Telemedecine is subject to certian limitations,
+                such as its virtual nature and/or lack of access to complete patient records.
+                furthermore, the patient must seek urgent medical attentionas may be neccessary,
+                in case the symptoms persist, condition does not improve,
+                or adverse reaction is noted from any prescribed medication,
+                among others. </p>
+        </div>
+    </main>
+
+</body>
+<script src="app.js"></script>
+
+</html>
