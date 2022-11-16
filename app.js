@@ -22,6 +22,7 @@ function productsearch1() {
   let headersList = {
     "X-Requested-With": "XMLHttp",
     "Content-Type": "application/json",
+    "Access-Control-Allow-Private-Network" : true,
   };
   fetch("http://127.0.0.1:8000/api/product/" + pid1, {
     method: "GET",
@@ -53,6 +54,7 @@ function productsearch2() {
   let headersList = {
     "X-Requested-With": "XMLHttp",
     "Content-Type": "application/json",
+    "Access-Control-Allow-Private-Network" : true,
   };
   fetch("http://127.0.0.1:8000/api/product/" + pid2, {
     method: "GET",
@@ -84,6 +86,7 @@ function productsearch3() {
   let headersList = {
     "X-Requested-With": "XMLHttp",
     "Content-Type": "application/json",
+    "Access-Control-Allow-Private-Network" : true,
   };
   fetch("http://127.0.0.1:8000/api/product/" + pid3, {
     method: "GET",
@@ -123,6 +126,7 @@ function order() {
     "X-Shopify-Access-Token",
     "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"
   );
+  
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
