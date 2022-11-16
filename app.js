@@ -33,7 +33,7 @@ function productsearch1() {
       localStorage.setItem("varId1", json.variants[0].id);
     });
 
-  sleep(460);
+
 
   if (quantity1 == 0) {
     document.getElementById("availability1").textContent = "Unavailable";
@@ -64,7 +64,7 @@ function productsearch2() {
       localStorage.setItem("varId2", json.variants[0].id);
     });
 
-  sleep(460);
+
 
   if (quantity2 == 0) {
     document.getElementById("availability2").textContent = "Unavailable";
@@ -95,7 +95,6 @@ function productsearch3() {
       localStorage.setItem("varId3", json.variants[0].id);
     });
 
-  sleep(460);
 
   if (quantity3 == 0) {
     document.getElementById("availability3").textContent = "Unavailable";
