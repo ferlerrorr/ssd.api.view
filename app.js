@@ -33,8 +33,6 @@ function productsearch1() {
       localStorage.setItem("varId1", json.variants[0].id);
     });
 
-
-
   if (quantity1 == 0) {
     document.getElementById("availability1").textContent = "Unavailable";
   } else if (quantity1 < pqty1) {
@@ -63,8 +61,6 @@ function productsearch2() {
       localStorage.setItem("qty2", json.variants[0].inventory_quantity);
       localStorage.setItem("varId2", json.variants[0].id);
     });
-
-
 
   if (quantity2 == 0) {
     document.getElementById("availability2").textContent = "Unavailable";
@@ -95,7 +91,6 @@ function productsearch3() {
       localStorage.setItem("varId3", json.variants[0].id);
     });
 
-
   if (quantity3 == 0) {
     document.getElementById("availability3").textContent = "Unavailable";
   } else if (quantity3 < pqty3) {
@@ -123,23 +118,31 @@ function order() {
     "X-Shopify-Access-Token",
     "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"
   );
-  
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
-
       var jsonResponse = JSON.parse(xhr.responseText);
       // window.location.replace(jsonResponse.draft_order.invoice_url);
       window.open(jsonResponse.draft_order.invoice_url);
     }
   };
 
-  var data = ` {   
-                 "email":"xmaple@gmail.com",
-                 "name":"xample",
-                 "note":"xample",
-                 "draft_order": {
-                       "line_items": [
+  var data = `{   
+    "full_name" :
+       {
+         "firstname": "Ferl John",
+         "middlename": "Dacdac",
+         "surname": "Javier",
+         "affix": ""
+        },
+      "card_number":"003-2233-9222",
+      "gender":"Male",
+      "date_of_birth":"1994-12-17",
+      "email":"xmaple@gmail.com",
+      "contact_number":"09336199624",
+      "address":"O 1-7 BistekVille 2 Brgy, Kaligayahan Novaliches Quezon City, 1124",
+          "draft_order": {
+              "line_items": [
                           {
                            "variant_id": ${varId1},
                            "quantity": ${pqty1}
@@ -152,10 +155,17 @@ function order() {
                             "variant_id": ${varId3},
                             "quantity": ${pqty3}
                            }
-                       ]
-                   }
-          }`;
-
-  sleep(5);
+                          ]
+                          },
+      "doctors_full_name": 
+        {
+          "firstname": "Juan",
+          "middlename": "Conchito",
+          "surname": "Dela Cruz",
+          "affix": "Dr."
+        },
+      "prc_number":"123992239003",
+      "provider":"Maxicare"
+             }`;
   xhr.send(data);
 }
