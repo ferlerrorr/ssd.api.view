@@ -129,18 +129,17 @@ function order() {
 
   var data = `{   
     "full_name" :
-       {
-         "firstname": "Ferl John",
-         "middlename": "Dacdac",
-         "surname": "Javier",
-         "affix": ""
+        {
+           "firstname": "Ferl John",
+           "middlename": "Dacdac",
+           "surname": "Javier",
+           "affix": ""
         },
-      "card_number":"003-2233-9222",
-      "gender":"Male",
-      "date_of_birth":"1994-12-17",
-      "email":"xmaple@gmail.com",
-      "contact_number":"09336199624",
-      "address":"O 1-7 BistekVille 2 Brgy, Kaligayahan Novaliches Quezon City, 1124",
+   "gender":"Male",
+   "date_of_birth":"1994-12-17",
+   "email":"xmaple@gmail.com",
+   "contact_number":"09336199624",
+   "address":"O 1-7 BistekVille 2 Brgy, Kaligayahan Novaliches Quezon City, 1124",
           "draft_order": {
               "line_items": [
                           {
@@ -157,15 +156,19 @@ function order() {
                            }
                           ]
                           },
-      "doctors_full_name": 
-        {
-          "firstname": "Juan",
-          "middlename": "Conchito",
-          "surname": "Dela Cruz",
-          "affix": "Dr."
-        },
-      "prc_number":"123992239003",
-      "provider":"Maxicare"
-             }`;
+                          "doctors_full_name": 
+                          {
+                             "firstname": "Juan",
+                             "middlename": "Conchito",
+                             "surname": "Dela Cruz",
+                             "affix": "Dr."
+                          },
+                       "prc_number":"123992239003",
+                       "provider":{
+                          "provider_name":"Maxicare",
+                          "card_number":"003-2233-9222"
+                       }
+        }`;
+    
   xhr.send(data);
 }
