@@ -97,22 +97,22 @@
   }
   
   h2 {
-    --font-size: 2rem;
+    --font-size: 2.5rem;
     --typography-spacing-vertical: .925rem;
   }
   
   h3 {
-    --font-size: 1.5rem;
+    --font-size: 2rem;
     --typography-spacing-vertical: .925rem;
   }
   
   h4 {
-    --font-size: 1rem;
+    --font-size: 1.5rem;
     --typography-spacing-vertical: .774rem;
   }
   
   h5 {
-    --font-size: .8rem;
+    --font-size: 1rem;
     --typography-spacing-vertical: .375rem;
   }
   
@@ -1104,8 +1104,8 @@ body{
   background-color: #f3f3f3;
   display: flex;
   padding: 1rem 1.3rem 3rem 1.3rem ;
-  height: max-content;
-  width: 29%;
+  height: 95vh;
+  width: 38%;
   display: flex;
   flex-direction: column;
 }
@@ -1113,7 +1113,7 @@ body{
 
 input{
   width: 60% !important;
-  font-size: .68rem;
+  font-size: .8rem;
   color: black;
   margin: 0 !important;
   padding: 0 !important;
@@ -1141,6 +1141,7 @@ input[type=number]::-webkit-outer-spin-button {
   width: 100%;
   margin: 0;
   padding: 0;
+  height: 22vh;
 }
 
 .title-1{
@@ -1166,7 +1167,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 .dd > p {
-  font-size: .65rem;
+  font-size: .7rem;
   letter-spacing: .5px;
 
 }
@@ -1176,7 +1177,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .title-1 > .ss > p{
   color: black;
-  font-size: .7rem;
+  font-size: .8rem;
   display: flex;
   text-align: center;
   align-content: center;
@@ -1187,7 +1188,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .epres{
-  font-size: 1.3rem;
+  font-size: 1.42rem;
   padding: 0 0 0 0;
   margin: 0 0 12px 0;
   letter-spacing: 1.5px;
@@ -1286,7 +1287,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 .pdtails-col-1 > p{
-  font-size: .68rem;
+  font-size: .8rem;
   letter-spacing: 1px;
   padding: 2px;
   margin: 0;
@@ -1295,7 +1296,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .pdtails-col-2 > p{
-  font-size: .68rem;
+  font-size: .8rem;
   letter-spacing: 1px;
   padding: 2px;
   margin: 0;
@@ -1304,7 +1305,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .pdtails-col-3 > p{
-  font-size: .68rem;
+  font-size: .8rem;
   letter-spacing: 1px;
   padding: 2px;
   margin: 0;
@@ -1337,11 +1338,11 @@ th,td{
   
 }
 th{
-  font-size: .7rem;
+  font-size: .8rem;
 }
 
 td{
-  font-size: .6rem;
+  font-size: .8rem;
   word-break:break-all;  
 }
 textarea { 
@@ -1394,7 +1395,7 @@ background: blue;
   width: 100% !important; 
   padding: 0 !important; 
   margin: 0 !important; 
-  font-size: .6rem;
+  font-size: .8rem;
 }
 
 .txtarea{
@@ -1402,7 +1403,7 @@ background: blue;
   padding: 10px 0 0 5px !important; 
   margin:0 !important;
   word-wrap:break-word; 
-  font-size:.6rem;
+  font-size:.8rem;
 }
 
 .quantity-cont{
@@ -1413,7 +1414,7 @@ background: blue;
 .quantity{
   width: 100% !important; 
   padding: 0 !important; 
-  margin: 0 !important;
+  margin: 0 !important; 
 }
 
 
@@ -1435,7 +1436,8 @@ background: blue;
 }
 
 .signee{
-  margin-top: 2rem !important;  
+  margin-top: 3rem !important;  
+  margin-bottom: 4rem !important;  
   margin-left: 0 !important; 
   height: 10%;
   width: 50%;
@@ -1452,7 +1454,7 @@ background: blue;
 
 .notice > h3 {
   width: 31%; 
-  font-size: 1.05rem;
+  font-size: 1.39rem;
   margin-bottom: 1px;
 }
 
