@@ -23,7 +23,7 @@ function productsearch1() {
     "X-Requested-With": "XMLHttp",
     "Content-Type": "application/json",
   };
-  fetch("http://127.0.0.1:8000/api/product/" + pid1, {
+  fetch("http://127.0.0.1:8000/api/ssd/product/" + pid1, {
     method: "GET",
     headers: headersList,
   })
@@ -52,7 +52,7 @@ function productsearch2() {
     "X-Requested-With": "XMLHttp",
     "Content-Type": "application/json",
   };
-  fetch("http://127.0.0.1:8000/api/product/" + pid2, {
+  fetch("http://127.0.0.1:8000/api/ssd/product/" + pid2, {
     method: "GET",
     headers: headersList,
   })
@@ -81,7 +81,7 @@ function productsearch3() {
     "X-Requested-With": "XMLHttp",
     "Content-Type": "application/json",
   };
-  fetch("http://127.0.0.1:8000/api/product/" + pid3, {
+  fetch("http://127.0.0.1:8000/api/ssd/product/" + pid3, {
     method: "GET",
     headers: headersList,
   })
@@ -101,7 +101,7 @@ function productsearch3() {
 }
 
 function order() {
-  var url = "http://127.0.0.1:8000/api/products/order";
+  var url = "http://127.0.0.1:8000/api/ssd/products/order";
   let pqty1 = parseInt(document.getElementById("quantity1").value);
   var varId1 = parseInt(localStorage.getItem("varId1"));
   let pqty2 = parseInt(document.getElementById("quantity2").value);
