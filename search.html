@@ -104,7 +104,7 @@
         var liSelected;
         var index = -1;
         document.addEventListener('keydown', function(event) {
-          var len = ul.getElementsByTagName('li').length - 0;
+          var len = ul.getElementsByTagName('li').length - 1;
           if (event.which === 40) {
             index++;
             //down 
@@ -241,26 +241,24 @@ display: block !important;
   /* border-bottom: 1px solid rgba(216, 202, 202, 0.336);  */
   box-sizing: border-box;
   width: 100%;
+  font-size: small;
+  font-weight: 600;
   padding: 18px 0 18px 10px;
   border-bottom: 1px solid transparent;
-  border-image: linear-gradient(0.25turn, rgba(185, 185, 184, 0.12), rgba(168, 167, 168, 0.25), rgba(185, 185, 184, 0.12));
+  border-image: linear-gradient(0.25turn, rgba(185, 185, 184, 0.12), rgba(7, 173, 219, 0.15), rgba(185, 185, 184, 0.12));
   border-image-slice: 1;
   width:100%;
  }
 
- .product_li h5{
-  padding: 0;
-  margin: 0;
- }
 
  .product_li.selected {
-  background: rgba(177, 196, 194, 0.836)
+  background-image:linear-gradient(0.25turn, rgba(240, 240, 236, 0.12), rgba(7, 173, 219, 0.15), rgba(240, 240, 236, 0.12));
 }
 
 
 
 </style>
-     </div>
+</div>
 </body>
 
 <script>
