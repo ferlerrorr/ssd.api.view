@@ -11,7 +11,7 @@
 <body>
     <div class="wrap">
         <div class="search">
-           <input type="text" class="searchTerm" id="searchTerm" placeholder="Search" >
+           <input type="text" class="searchTerm" id="searchTerm" placeholder="Search" style=" z-index: 1;" >
             <script>      
                 document.onkeydown = checkKey;
                   function checkKey(e) {
@@ -84,9 +84,38 @@
                       li.innerHTML =`${product_name}`;
                       return li;
                       }
-                     }
+                     };
+                     $(document).on("keypress", "#searchTerm", function (e) {
+                    if (e.keyCode == 13 || e.which == '13') {
+                      search();
+                    }
+                });
+
+                     
             </script>
-           <button type="submit" class="searchButton">
+           <button type="submit" class="searchButton" id="searchButton" onclick="search()" >
+                      <script>
+
+                        var button = document.getElementById("searchButton");
+
+                            function search(){
+                               const searchTerm = document.querySelector(".searchTerm");
+                               var url = "http://127.0.0.1:8000/api/product/search-products/" + searchTerm.value;
+                                var xhr = new XMLHttpRequest();
+                                xhr.open("GET", url);
+                                xhr.onreadystatechange = function () {
+                                  if (xhr.readyState === 4) {
+                                  let data = xhr.responseText;
+                                  localStorage.setItem("searchdata", data);
+                                  window.open("index.html");
+                                  }};
+                                xhr.send();
+                                localStorage.setItem("searchTerm",searchTerm.value)
+                            }  
+                            
+                   
+
+                      </script>
             <span class="material-symbols-outlined search">
                 search
             </span>
@@ -167,30 +196,33 @@
         </div>
       
 <style>
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+ @import url('http://fonts.cdnfonts.com/css/helvetica-255'); 
 
 body{
-  background: #f2f2f2;
-  font-family: 'Open Sans', sans-serif;
+  background: #fff;
+  font-family: 'Helvetica', sans-serif;
 }
 
 .search {
   width: 100%;
   position: relative;
   display: flex;
+  align-self: center;
+  justify-content: center;
 }
 
 .searchTerm {
-  width: 100%;
-  border: 2px solid rgb(7, 174, 219);
+  width: 80%;
+  border: 1.2px solid #dfe1e5;
   border-right: none;
   padding: 5px;
-  height: 20px;
-  border-radius: 3px 0 0 3px;
+  height: 1.282rem;
   outline: none;
-  color: #9DBFAF;
-  font-weight: 600;
+  color: #999;
+  font-weight: 500;
   letter-spacing: 1px;
+  border-radius: 7px 0 0 7px;
+  box-shadow: 0 2px 7px rgb(51 51 51 / 23%);
 }
 
 .searchTerm:focus{
@@ -199,15 +231,18 @@ body{
 }
 
 .searchButton {
-  width: 36px;
-  height: 34px;
-  border: 1px solid rgb(7, 174, 219);
-  background: rgb(7, 174, 219);
+  width: 30px;
+  height: 2.1rem;
+  border: 1.2px solid #dfe1e5;
+  background: #fff;
   text-align: center;
-  color: #fff;
-  border-radius: 0 3px 3px 0;
+  color: #005dab;
+  border-radius: 0 7px 7px 0;
   cursor: pointer;
   font-size: 18px;
+  box-shadow: 0 2px 5px rgb(51 51 51 / 23%);
+  margin-top: 0;
+  margin-bottom: 2px;
 }
 
 

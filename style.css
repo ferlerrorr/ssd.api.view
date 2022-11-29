@@ -1104,8 +1104,8 @@ body{
   background-color: #f3f3f3;
   display: flex;
   padding: 1rem 1.3rem 3rem 1.3rem ;
-  height: 95vh;
-  width: 38%;
+  height: 105vh;
+  width: 47%;
   display: flex;
   flex-direction: column;
 }
@@ -1216,7 +1216,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 .title-2 >  img{
- width: 78%;
+ width: 64%;
  margin: 0;
  padding: 0;
 }
@@ -1229,7 +1229,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 .title-2 > button{
-  width: 88%;
+  width: 61.8%;
   height: 25%;
   padding: 5px;
   font-size: .8rem;
@@ -1453,9 +1453,10 @@ background: blue;
 }
 
 .notice > h3 {
-  width: 31%; 
+  /* width: 31%;  */
   font-size: 1.39rem;
   margin-bottom: 1px;
+  margin-right: .5rem;
 }
 
 

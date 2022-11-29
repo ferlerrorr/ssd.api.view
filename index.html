@@ -66,9 +66,20 @@
             <h4 class="epres">
                 Rx <p>-- Note <strong>Total</strong> number can be adjusted for the number purchase</p>
             </h4>
+            <div style="display: flex; flex-direction:row">
+            <div style="border-top: 1px solid #000;
+            border-left: 1px solid #000;
+            border-bottom: 1px solid #000;
+             width: 15%; height: 100%;
+             text-align: center;
+             justify-content: center;
+             align-items: center;
+             display: flex;
+             ">
+                <textarea class="txtarea" id="searchTerm" placeholder=""></textarea>
+            </div>
             <table class="tbl container">
-                <tr>
-                    <th>Generic</th>
+                <tr> 
                     <th>Brand</th>
                     <th>Dosage</th>
                     <th>Form</th>
@@ -81,17 +92,16 @@
                     <th>Sig</th>
                 </tr>
                 <tr>
-                    <td class="txtarea-con"><textarea class="txtarea" placeholder="Band Aid"></textarea></td>
                     <td>
-                        <input type="text" class="productId" name="productId" id="pid1" value="8021829681446" disabled>
+                        <textarea class="txtarea" id="txtarea" placeholder=""></textarea>
                     </td>
-                    <td>250mg</td>
+                    <td>250mg<input type="text" class="productId" name="productId" id="pid1"  disabled></td>
                     <td>Tablet</td>
                     <td>1</td>
                     <td>Every 3 Hrs</td>
                     <td>2</td>
                     <td class="quantity-cont">
-                        <input class="quantity" type="number" value="12" name="quantity1" id="quantity1">
+                        <input class="quantity" type="number" value="30" name="quantity1" id="quantity1">
                     </td>
                     <td><label class="availability" id="availability1">
                         </label>
@@ -100,12 +110,10 @@
                     <td>Take 1 tablet every 3 Hrs</td>
                 </tr>
                 <tr>
-                    <td>
-                        <textarea class="txtarea" placeholder="Biogesic" value="8021831287078"></textarea>
+                    <td>                         
+                        <textarea class="txtarea" id="txtarea1" placeholder=""></textarea>
                     </td>
-                    <td> <input type="text" class="productId" name="productId" id="pid2" value="8021828501798" disabled>
-                    </td>
-                    <td>250mg</td>
+                    <td>250mg<input type="text" class="productId" name="productId" id="pid2"  disabled></td>
                     <td>Tablet</td>
                     <td>1</td>
                     <td>Every 3 Hrs</td>
@@ -118,10 +126,11 @@
                     <td>Take 1 tablet every 3 Hrs</td>
                 </tr>
                 <tr>
-                    <td><textarea class="txtarea" placeholder="Mefenamic Acid"></textarea></td>
-                    <td> <input type="text" class="productId" name="productId" id="pid3" value="8020036682022" disabled>
+                    <td> 
+                        
+                        <textarea class="txtarea" id="txtarea2" placeholder=""></textarea>
                     </td>
-                    <td>250mg</td>
+                    <td>250mg<input type="text" class="productId" name="productId" id="pid3"  disabled></td>
                     <td>Tablet</td>
                     <td>1</td>
                     <td>Every 3 Hrs</td>
@@ -135,8 +144,85 @@
                     <td>Take 1 tablet every 3 Hrs</td>
                 </tr>
             </table>
-
-
+             </div>
+             <div style="display: flex; flex-direction:row; margin-top: 1rem ;">
+                <div style="border-top: 1px solid #000;
+                border-left: 1px solid #000;
+                border-bottom: 1px solid #000;
+                 width: 15%; height: 100%;
+                 text-align: center;
+                 justify-content: center;
+                 align-items: center;
+                 display: flex;
+                 ">
+                    <textarea class="txtarea" placeholder="Ethinylestradiol"></textarea>
+                </div>
+             <table class="tbl container">
+                <tr> 
+                    <th>Brand</th>
+                    <th>Dosage</th>
+                    <th>Form</th>
+                    <th>Qty</th>
+                    <th>Frequency</th>
+                    <th>Days</th>
+                    <th>Total</th>
+                    <th>Availability</th>
+                    <th>Maintenance</th>
+                    <th>Sig</th>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea class="txtarea" placeholder="Rx: Yasmin"></textarea>
+                    </td>
+                    <td>250mg<input type="text" class="productId" name="productId" disabled></td>
+                    <td>Tablet</td>
+                    <td>1</td>
+                    <td>Every 3 Hrs</td>
+                    <td>2</td>
+                    <td class="quantity-cont">
+                        <input class="quantity" type="number" value="12" name="quantity1" >
+                    </td>
+                    <td><label class="availability">Available</label>
+                    </td>
+                    <td>No</td>
+                    <td>Take 1 tablet every 3 Hrs</td>
+                </tr>
+                <tr>
+                    <td>                         
+                        <textarea class="txtarea"  placeholder="Rx: Diane-35"></textarea>
+                    </td>
+                    <td>250mg<input type="text" class="productId" name="productId"   disabled></td>
+                    <td>Tablet</td>
+                    <td>1</td>
+                    <td>Every 3 Hrs</td>
+                    <td>2</td>
+                    <td class="quantity-cont">
+                        <input class="quantity" type="number" value="23" name="quantity2" >
+                    </td>
+                    <td><label class="availability">Available</label></td>
+                    <td>No</td>
+                    <td>Take 1 tablet every 3 Hrs</td>
+                </tr>
+                <tr>
+                    <td> 
+                        
+                        <textarea class="txtarea" placeholder="Rx: Yaz 3mg / 0.02mg Tablet"></textarea>
+                    </td>
+                    <td>250mg<input type="text" class="productId" name="productId"   disabled></td>
+                    <td>Tablet</td>
+                    <td>1</td>
+                    <td>Every 3 Hrs</td>
+                    <td>2</td>
+                    <td class="quantity-cont">
+                        <input class="quantity" type="number" name="quantity3"  value="4">
+                    </td>
+                    <td><label class="availability">Available</label></td>
+                    <td>No</td>
+                    <td>Take 1 tablet every 3 Hrs</td>
+                </tr>
+            </table>
+        </div>
+            
             <div class="pdtails-cont signee container">
                 <h5>
                     Certified By
@@ -166,11 +252,12 @@
                 <h3>IMPORTANT NOTICE</h3>
                 <p class="ttl-align">
                     This e-Prescription was issued following a consultation via Telemedecine.  While All necessary 
+                    steps were Taken to arrive at
                 </p>
 
             </div>
             <p class="pnotice">
-                steps were Taken to arrive at the best possible diagnosis and
+                 the best possible diagnosis and
                 recommendation,
                 all partiesare advised that Telemedecine is subject to certian limitations,
                 such as its virtual nature and/or lack of access to complete patient records.
