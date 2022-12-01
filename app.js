@@ -20,7 +20,6 @@ productsearch1();
 productsearch2();
 productsearch3();
 
-
 /** ##Sleep function*/
 function productsearch1() {
 
@@ -59,13 +58,6 @@ function availability1(){
 }
 setInterval(availability1, 1000);
 
-
-
-
-
-
-
-
 function productsearch2() {
   
   let arr = localStorage.getItem("searchdata")
@@ -86,7 +78,6 @@ function productsearch2() {
       localStorage.setItem("qty2", json.inventory_quantity);
       localStorage.setItem("varId2", json.variant_id);
     });
- 
 }
 
 function availability2(){
@@ -104,7 +95,6 @@ setInterval(availability2, 1000);
 
 
 function productsearch3() {
-
   let arr  = localStorage.getItem("searchdata")
   let dit = JSON.parse(arr);
   let pid3 = document.getElementById("pid3").value = dit[2].product_id;
@@ -140,11 +130,7 @@ function availability3(){
 setInterval(availability3, 1000);
 
 
-
-
-
-
-function order() {
+function order(){
   var url = "http://127.0.0.1:8000/api/ssd/products/order";
   let pqty1 = parseInt(document.getElementById("quantity1").value);
   var varId1 = parseInt(localStorage.getItem("varId1"));
@@ -155,73 +141,64 @@ function order() {
 
   var xhr = new XMLHttpRequest();
   xhr.open("POST", url);
-
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.setRequestHeader("X-Requested-With", "XMLHttp");
-
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
-      var urlResponse = xhr.responseText;
-      window.open(urlResponse);
-      // var invoice_url = urlResponse.invoice_url.value;
-      // window.open(invoice_url);
+      window.open(xhr.responseText);
     }
   };
-
-  var data3 = `{
+  var data = `{
     "full_name": {
-      "firstname": "Ferl John",
-      "middlename": "Dacdac",
-      "surname": "Javier",
-      "affix": ""
-    },
-    "gender": "Male",
-    "date_of_birth": "1994-12-17",
-    "email": "xmaple@gmail.com",
-    "contact_number": "09336199624",
-    "address": "O 1-7 BistekVille 2 Brgy, Kaligayahan Novaliches Quezon City, 1124",
-    "draft_order": {
-      "line_items": [
-        {
-          "variant_id":${varId1},
-          "quantity": ${pqty1}
-        }
-        ,
-        {
-          "variant_id":${varId2},
-          "quantity": ${pqty2}
-        },
-        {
-          "variant_id":${varId3},
-          "quantity": ${pqty3}
-        },
-        {
-          "variant_id":44016407511334,
-          "quantity": 12
-        }
-        ,
-        {
-          "variant_id":44016396173606,
-          "quantity": 23
-        },
-        {
-          "variant_id":44016410231078,
-          "quantity": 4
-        }
-      ]
-    },
-    "doctors_full_name": {
-      "firstname": "Juan",
-      "middlename": "Conchito",
-      "surname": "Dela Cruz",
-      "affix": "Dr"
-    },
-    "prc_number": "123992239003",
-    "provider": {
-      "provider_name": "Maxicare",
-      "card_number": "003-2233-9222"
-    }
-  }`;
-  
-  xhr.send(data3);
+    "firstname": "Ferl John",
+    "middlename": "Dacdac",
+    "surname": "Javier",
+    "affix": ""
+  },
+  "gender": "Male",
+  "date_of_birth": "1994-12-17",
+  "email": "xmaple@gmail.com",
+  "contact_number": "09336199624",
+  "address": "O 1-7 BistekVille 2 Brgy, Kaligayahan Novaliches Quezon City, 1124",
+  "draft_order": {
+    "line_items": [
+      {
+        "variant_id":${varId1},
+        "quantity": ${pqty1}
+      },
+      {
+        "variant_id":${varId2},
+        "quantity": ${pqty2}
+      },
+      {
+        "variant_id":${varId3},
+        "quantity": ${pqty3}
+      },
+      {
+        "variant_id":44016407511334,
+        "quantity": 12
+      },
+      {
+        "variant_id":44016396173606,
+        "quantity": 23
+      },
+      {
+        "variant_id":44016410231078,
+        "quantity": 4
+      }
+    ]
+  },
+  "doctors_full_name": {
+    "firstname": "Juan",
+    "middlename": "Conchito",
+    "surname": "Dela Cruz",
+    "affix": "Dr"
+  },
+  "prc_number": "123992239003",
+  "provider": {
+    "provider_name": "Maxicare",
+    "card_number": "003-2233-9222"
+  }
+}`;
+  xhr.send(data);
 }
