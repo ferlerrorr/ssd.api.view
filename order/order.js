@@ -9,19 +9,23 @@ function sleep(milliseconds) {
     currentDate = Date.now();
   } while (currentDate - date < milliseconds);
 }
-localStorage.setItem("varId1" , null);
-localStorage.setItem("qty1" , null);
-localStorage.setItem("varId2" , null);
-localStorage.setItem("qty2" , null);
-localStorage.setItem("varId3" , null);
-localStorage.setItem("qty3" , null);
-document.getElementById("searchTerm").value = localStorage.getItem("searchTerm");
-productsearch1();
-productsearch2();
+localStorage.setItem("varId1" , "");
+localStorage.setItem("qty1" , "");
+localStorage.setItem("varId2" , "");
+localStorage.setItem("qty2" , "");
+localStorage.setItem("varId3" , "");
+localStorage.setItem("qty3" , "");
+productsearch1(),
+productsearch2(),
 productsearch3();
-
+setInterval(availability1, 6);
+setInterval(availability2, 6);
+setInterval(availability3, 6);
+document.getElementById("searchTerm").value = localStorage.getItem("searchTerm");
 /** ##Sleep function*/
-function productsearch1() {
+
+
+async function productsearch1() {
 
 let arr  = localStorage.getItem("searchdata");
 let dit = JSON.parse(arr);
@@ -33,7 +37,7 @@ document.getElementById("txtarea").value = dit[0].product_name;
     "X-Requested-With": "XMLHttp",
     "Content-Type": "application/json",
   };
-  fetch("http://127.0.0.1:8000/api/ssd/product/" + pid1, {
+  await fetch("http://127.0.0.1:8000/api/ssd/product/" + pid1, {
     method: "GET",
     headers: headersList,
   })
@@ -45,10 +49,10 @@ document.getElementById("txtarea").value = dit[0].product_name;
 
 }
 
-function availability1(){
+async function availability1(){
   let quantity1 = localStorage.getItem("qty1");
   let pqty1 = parseInt(document.getElementById("quantity1").value);
-  if (quantity1 == 0) {
+if (quantity1 == 0) {
     document.getElementById("availability1").textContent = "Unavailable";
   } else if (quantity1 < pqty1) {
     document.getElementById("availability1").textContent = "Insufficient";
@@ -56,9 +60,9 @@ function availability1(){
     document.getElementById("availability1").textContent = "Available";
   }
 }
-setInterval(availability1, 1000);
 
-function productsearch2() {
+
+async function productsearch2() {
   
   let arr = localStorage.getItem("searchdata")
   let dit = JSON.parse(arr);
@@ -69,7 +73,7 @@ function productsearch2() {
     "X-Requested-With": "XMLHttp",
     "Content-Type": "application/json",
   };
-  fetch("http://127.0.0.1:8000/api/ssd/product/" + pid2, {
+ await fetch("http://127.0.0.1:8000/api/ssd/product/" + pid2, {
     method: "GET",
     headers: headersList,
   })
@@ -80,7 +84,7 @@ function productsearch2() {
     });
 }
 
-function availability2(){
+async function availability2(){
   let quantity2 = localStorage.getItem("qty2");
   let pqty2 = parseInt(document.getElementById("quantity2").value);
   if (quantity2 == 0) {
@@ -91,10 +95,8 @@ function availability2(){
     document.getElementById("availability2").textContent = "Available";
   }
 }
-setInterval(availability2, 1000);
 
-
-function productsearch3() {
+async function productsearch3() {
   let arr  = localStorage.getItem("searchdata")
   let dit = JSON.parse(arr);
   let pid3 = document.getElementById("pid3").value = dit[2].product_id;
@@ -104,7 +106,7 @@ function productsearch3() {
     "X-Requested-With": "XMLHttp",
     "Content-Type": "application/json",
   };
-  fetch("http://127.0.0.1:8000/api/ssd/product/" + pid3, {
+ await fetch("http://127.0.0.1:8000/api/ssd/product/" + pid3, {
     method: "GET",
     headers: headersList,
   })
@@ -116,7 +118,7 @@ function productsearch3() {
 
   }
 
-function availability3(){
+async function availability3(){
   let quantity3 = localStorage.getItem("qty3");
   let pqty3 = parseInt(document.getElementById("quantity3").value);
   if (quantity3 == 0) {
@@ -127,7 +129,7 @@ function availability3(){
     document.getElementById("availability3").textContent = "Available";
   }
 }
-setInterval(availability3, 1000);
+
 
 
 function order(){
