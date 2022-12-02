@@ -24,9 +24,7 @@ setInterval(availability3, 6);
 document.getElementById("searchTerm").value = localStorage.getItem("searchTerm");
 /** ##Sleep function*/
 
-
 async function productsearch1() {
-
 let arr  = localStorage.getItem("searchdata");
 let dit = JSON.parse(arr);
 let pid1 = document.getElementById("pid1").value = dit[0].product_id;
@@ -46,7 +44,6 @@ document.getElementById("txtarea").value = dit[0].product_name;
       localStorage.setItem("qty1", json.inventory_quantity);
       localStorage.setItem("varId1", json.variant_id);
     })
-
 }
 
 async function availability1(){
@@ -63,12 +60,10 @@ if (quantity1 == 0) {
 
 
 async function productsearch2() {
-  
   let arr = localStorage.getItem("searchdata")
   let dit = JSON.parse(arr);
   let pid2 = document.getElementById("pid2").value = dit[1].product_id;
   document.getElementById("txtarea1").value = dit[1].product_name;
-  //Active Queue
   let headersList = {
     "X-Requested-With": "XMLHttp",
     "Content-Type": "application/json",
@@ -129,8 +124,6 @@ async function availability3(){
     document.getElementById("availability3").textContent = "Available";
   }
 }
-
-
 
 function order(){
   var url = "http://127.0.0.1:8000/api/ssd/products/order";

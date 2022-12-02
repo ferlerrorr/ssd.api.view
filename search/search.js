@@ -1,3 +1,15 @@
+//!Sleep function
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+//!Sleep function
+
+
+//!On input idle -> Unfocus
 document.onkeydown = checkKey;
 function checkKey(e) {
   e = e || window.event;
@@ -9,16 +21,13 @@ function checkKey(e) {
     return;
   }
 }
-function sleep(milliseconds) {
-  const date = Date.now();
-  let currentDate = null;
-  do {
-    currentDate = Date.now();
-  } while (currentDate - date < milliseconds);
-}
-//setup before functions
-let typingTimer; //timer identifier
-let doneTypingInterval = 260; //time in ms (half a seconds)
+//!On input idle -> Unfocus
+
+
+//!Search Typing Funtion 
+//*setup before functions
+let typingTimer; //*timer identifier
+let doneTypingInterval = 260; //*time in ms (half a seconds)
 let myInput = document.getElementById("searchTerm");
 myInput.addEventListener(
   "keyup",
@@ -27,7 +36,7 @@ myInput.addEventListener(
   },
   false
 );
-//on keyup, start the countdown
+//*on keyup, start the countdown
 myInput.addEventListener("keyup", () => {
   clearTimeout(typingTimer);
 
@@ -37,8 +46,7 @@ myInput.addEventListener("keyup", () => {
     $(UlDropdown).empty();
   }
 });
-
-//user is "finished typing," do something
+//*user is "finished typing," do something
 function doneTyping() {
   const searchTerm = document.querySelector(".searchTerm");
   const UlDropdown = document.querySelector(".UlDropdown");
@@ -61,6 +69,7 @@ function doneTyping() {
     xhr.send();
   }
 }
+//*Product not found
 function ul_func(product_name, variant_id) {
   let li = document.createElement("li");
   li.classList.add("product_li");
@@ -74,14 +83,16 @@ function ul_func(product_name, variant_id) {
     return li;
   }
 }
+//!Search Typing Funtion 
+
+
+//!On Enter Search 
 $(document).on("keypress", "#searchTerm", function (e) {
   if (e.keyCode == 13 || e.which == "13") {
     search();
   }
 });
-
 var button = document.getElementById("searchButton");
-
 function search() {
   const searchTerm = document.querySelector(".searchTerm");
   var url =
@@ -98,7 +109,10 @@ function search() {
   xhr.send();
   localStorage.setItem("searchTerm", searchTerm.value);
 }
+//!On Enter Search 
 
+
+//!Product Dropdown Selection 
 let ul = document.getElementById("UlDropdown");
 var liSelected;
 var index = -1;
@@ -165,3 +179,4 @@ function addClass(el, className) {
     el.className += " " + className;
   }
 }
+//!Product Dropdown Selection 
