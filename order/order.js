@@ -34,8 +34,9 @@ document.getElementById("txtarea").value = dit[0].product_name;
   let headersList = {
     "X-Requested-With": "XMLHttp",
     "Content-Type": "application/json",
+    "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3MDIyMTE2NywibmJmIjoxNjcwMjIxMTY3LCJqdGkiOiJ0T1B4b3BuemR2dGdXMUNmIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.7N2ztr_V1Cn6_HqwIliqD_GSVwl5Q8XxEIGHJ5LWmlE"
   };
-  await fetch("http://127.0.0.1:8000/api/ssd/product/" + pid1, {
+  await fetch("http://127.0.0.1:8000/api/auth/ssd/search-product/" + pid1, {
     method: "GET",
     headers: headersList,
   })
@@ -67,8 +68,9 @@ async function productsearch2() {
   let headersList = {
     "X-Requested-With": "XMLHttp",
     "Content-Type": "application/json",
+    "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3MDIyMTE2NywibmJmIjoxNjcwMjIxMTY3LCJqdGkiOiJ0T1B4b3BuemR2dGdXMUNmIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.7N2ztr_V1Cn6_HqwIliqD_GSVwl5Q8XxEIGHJ5LWmlE"
   };
- await fetch("http://127.0.0.1:8000/api/ssd/product/" + pid2, {
+ await fetch("http://127.0.0.1:8000/api/auth/ssd/search-product/" + pid2, {
     method: "GET",
     headers: headersList,
   })
@@ -100,8 +102,9 @@ async function productsearch3() {
   let headersList = {
     "X-Requested-With": "XMLHttp",
     "Content-Type": "application/json",
+    "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3MDIyMTE2NywibmJmIjoxNjcwMjIxMTY3LCJqdGkiOiJ0T1B4b3BuemR2dGdXMUNmIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.7N2ztr_V1Cn6_HqwIliqD_GSVwl5Q8XxEIGHJ5LWmlE"
   };
- await fetch("http://127.0.0.1:8000/api/ssd/product/" + pid3, {
+ await fetch("http://127.0.0.1:8000/api/auth/ssd/search-product/" + pid3, {
     method: "GET",
     headers: headersList,
   })
@@ -134,66 +137,72 @@ function order(){
   let pqty3 = parseInt(document.getElementById("quantity3").value);
   var varId3 = parseInt(localStorage.getItem("varId3"));
 
+  var url = "http://127.0.0.1:8000/api/auth/ssd/products/order";
+
   var xhr = new XMLHttpRequest();
   xhr.open("POST", url);
+  
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.setRequestHeader("X-Requested-With", "XMLHttp");
+  xhr.setRequestHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3MDIyMTE2NywibmJmIjoxNjcwMjIxMTY3LCJqdGkiOiJ0T1B4b3BuemR2dGdXMUNmIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.7N2ztr_V1Cn6_HqwIliqD_GSVwl5Q8XxEIGHJ5LWmlE");
+  
   xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-      window.open(xhr.responseText);
-    }
-  };
+     if (xhr.readyState === 4) {
+        window.open(xhr.responseText);
+     }};
+  
   var data = `{
-    "full_name": {
-    "firstname": "Ferl John",
-    "middlename": "Dacdac",
-    "surname": "Javier",
-    "affix": ""
-  },
-  "gender": "Male",
-  "date_of_birth": "1994-12-17",
-  "email": "xmaple@gmail.com",
-  "contact_number": "09336199624",
-  "address": "O 1-7 BistekVille 2 Brgy, Kaligayahan Novaliches Quezon City, 1124",
-  "draft_order": {
-    "line_items": [
-      {
-        "variant_id":${varId1},
-        "quantity": ${pqty1}
-      },
-      {
-        "variant_id":${varId2},
-        "quantity": ${pqty2}
-      },
-      {
-        "variant_id":${varId3},
-        "quantity": ${pqty3}
-      },
-      {
-        "variant_id":44016407511334,
-        "quantity": 12
-      },
-      {
-        "variant_id":44016396173606,
-        "quantity": 23
-      },
-      {
-        "variant_id":44016410231078,
-        "quantity": 4
-      }
-    ]
-  },
-  "doctors_full_name": {
-    "firstname": "Juan",
-    "middlename": "Conchito",
-    "surname": "Dela Cruz",
-    "affix": "Dr"
-  },
-  "prc_number": "123992239003",
-  "provider": {
-    "provider_name": "Maxicare",
-    "card_number": "003-2233-9222"
-  }
-}`;
+      "full_name": {
+      "firstname": "Ferl John",
+      "middlename": "Dacdac",
+      "surname": "Javier",
+      "affix": ""
+    },
+    "gender": "Male",
+    "date_of_birth": "1994-12-17",
+    "email": "xmaple@gmail.com",
+    "contact_number": "09336199624",
+    "address": "O 1-7 BistekVille 2 Brgy, Kaligayahan Novaliches Quezon City, 1124",
+    "draft_order": {
+      "line_items": [
+        {
+          "variant_id":${varId1},
+          "quantity": ${pqty1}
+        },
+        {
+          "variant_id":${varId2},
+          "quantity": ${pqty2}
+        },
+        {
+          "variant_id":${varId3},
+          "quantity": ${pqty3}
+        },
+        {
+          "variant_id":44016407511334,
+          "quantity": 12
+        },
+        {
+          "variant_id":44016396173606,
+          "quantity": 23
+        },
+        {
+          "variant_id":44016410231078,
+          "quantity": 4
+        }
+      ]
+    },
+    "doctors_full_name": {
+      "firstname": "Juan",
+      "middlename": "Conchito",
+      "surname": "Dela Cruz",
+      "affix": "Dr"
+    },
+    "prc_number": "123992239003",
+    "provider": {
+      "provider_name": "Maxicare",
+      "card_number": "003-2233-9222"
+    }
+  }`;
+  
   xhr.send(data);
 }

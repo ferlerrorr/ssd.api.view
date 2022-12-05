@@ -103,7 +103,7 @@ function search() {
     if (xhr.readyState === 4) {
       let data = xhr.responseText;
       localStorage.setItem("searchdata", data);
-      window.open("/order/order-min.html");
+      window.open("./order/order.html");
     }
   };
   xhr.send();
