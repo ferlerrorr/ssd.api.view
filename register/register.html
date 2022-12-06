@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="register.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="container-fluid header-col">
+</header>
+    <div class="container wrap">
+        <h2 class="reg-ttl">APi Acess Registration</h2>
+       
+            <input type="text" placeholder="Fullname" id="name" >
+            <input type="email" placeholder="Email" id="email" >
+            <input type="password" placeholder="Password" id="password" >
+            <input type="password"placeholder="Re-type Password" id="password_confirmation" >
+            <button class="btn btn-register" type="submit" onclick="register();" >Register</button>
+            <div style="height: 20vh; display: flex; justify-content: center; flex-direction: column;">
+                <div class="remove" style="bottom: -10%;" for="response" id="res"></div>
+                <div class="remove" style="bottom: -14%;" for="response" id="res1"></div>
+                <div class="remove" style="bottom: -18%;" for="response" id="res2"></div>
+
+            </div>
+            
+    </div>   
+    <div class="logo-container"><img class="ssd_logo" src="../search/ssd_logo.avif" alt="ssd_logo" style="width: 16rem; height: auto; left: 3%; bottom: 5%;
+        position: absolute;"></div>
+</body>
+<script src="registration.js"></script>
+</html>
