@@ -988,3 +988,11 @@
     direction: rtl;
   }
   
+  textarea::selection {
+    background-color:  rgba(0, 140, 255, 0.200);
+  }
+  
+  input::selection {
+    background-color:  rgba(0, 140, 255, 0.200);
+  }
+  

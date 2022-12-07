@@ -28,12 +28,28 @@ input {
 }
 
 input:focus {
-  color: #fff;
+  background-color: #fff;
+  color: #000;
 }
 
-input::placeholder {
-  color: #f3f3f3;
+textarea:focus {
+  background-color: #fff;
+  color: #000;
 }
+
+
+input::placeholder {
+    color: #f3f3f3;
+}
+
+input::placeholder:focus {
+  color: #000;
+}
+
+textarea::placeholder:focus {
+  color: #000;
+}
+
 
 .btn {
   width: 50% !important;
