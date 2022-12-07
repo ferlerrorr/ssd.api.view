@@ -48,11 +48,13 @@ function setText(){
     for(var i = 0, len = json.length; i < len; i++){
       myArray.push(json[i][0]+"\n");
     }
-
-
+    res.classList.remove("actv");
+    res1.classList.remove("actv");
+    res2.classList.remove("actv");
 
     if(myArray[0] == undefined){
       res.classList.remove("actv");
+     
     }else{
       res.classList.add("actv");
       res.innerText = myArray[0];
@@ -60,14 +62,16 @@ function setText(){
 
     if(myArray[1] == undefined){
       res1.classList.remove("actv");
+      
     }else{
       res1.classList.add("actv");
-      res1.innerText = myArray[0];
+      res1.innerText = myArray[1];
     }
 
 
     if(myArray[2] == undefined){
       res2.classList.remove("actv");
+      
     }else{
       res2.classList.add("actv");
       res2.innerText = myArray[2];}

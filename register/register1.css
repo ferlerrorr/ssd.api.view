@@ -1,0 +1,145 @@
+.wrap {
+  width: 20%;
+  position: absolute;
+  top: 49%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  height: 65vh;
+}
+input {
+  margin-bottom: 10% !important;
+  width: 100% !important;
+  height: 13% !important;
+  position: relative;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  font-family: Helvetica, sans-serif;
+  font-size: 0.9rem;
+  color: #f3f3f3;
+  padding-left: 10px;
+  box-shadow: 0 3px 3px rgb(51 51 51 / 23%);
+  border-radius: 5px;
+  border: 1.2px solid #dfe1e5;
+}
+
+input:focus {
+  color: #fff;
+}
+
+input::placeholder {
+  color: #f3f3f3;
+}
+
+.btn {
+  width: 50% !important;
+  height: 5rem;
+  font-family: Helvetica, sans-serif;
+  font-weight: 600 !important;
+  background-color: #fff;
+  letter-spacing: 1.2px;
+  font-size: 0.9rem !important;
+  box-shadow: 0 2px 1px rgb(51 51 51 / 23%);
+  border-radius: 6px;
+  border: 1px solid #dfe1e5;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  padding-top: 15px;
+  padding: 0;
+  margin-right: 50%;
+}
+
+.btn-register {
+  color: #005dab;
+}
+
+.btn:active {
+  color: blue;
+  border: 1px solid #dfe1e5;
+  width: 50%;
+  box-shadow: 0 2px 1px rgba(4, 104, 255, 0.493);
+  transform: translateY(1.5px);
+  transition: 0.3ms;
+}
+
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+
+.reg-ttl {
+  font-size: 2.6rem;
+  letter-spacing: 5px;
+  margin-bottom: 7%;
+  color: #fff;
+}
+
+.header-col {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  clip-path: circle(60.7% at 76% 3%);
+  background: linear-gradient(
+      0deg,
+      rgba(0, 140, 255, 0.2),
+      rgba(0, 94, 171, 0.932)
+    ),
+    url(familybg.jpeg);
+  background-size: cover;
+  background-position: left;
+}
+
+.actv {
+  display: block !important;
+}
+
+.res {
+  height: max-content;
+  position: absolute;
+  display: none;
+  bottom: 11%;
+  font-family: Helvetica, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  padding: 3px;
+  font-weight: 600;
+}
+
+.res1 {
+  height: max-content;
+  position: absolute;
+  display: none;
+  bottom: 6%;
+  font-family: Helvetica, sans-serif;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  padding: 3px;
+  font-weight: 600;
+}
+
+.res2 {
+  height: max-content;
+  position: absolute;
+  display: none;
+  bottom: 1%;
+  font-family: Helvetica, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  padding: 3px;
+  font-weight: 600;
+}

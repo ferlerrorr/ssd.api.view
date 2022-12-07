@@ -7,23 +7,22 @@
     <title>Document</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="apitoken.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="container-fluid header-col">
 </header>
     <div class="container wrap">
         <h2 class="reg-ttl">Generate APiToken</h2>
-        <form>
-            
-            <input type="email" placeholder="Email" >
-            <input type="password" placeholder="Password">
-            <textarea name="apitoken" id="" cols="30" rows="10" placeholder="APi Token"></textarea>
-            <button class="btn btn-register" type="submit">Generate Token</button>
-        </form>
-            
-        
+      
+            <input type="email" placeholder="Email" id="apiemail" >
+            <input type="password" placeholder="Password" id="apipassword">
+
+            <textarea name="apitoken"  cols="30" rows="10" placeholder="APi Token" id="apitoken"></textarea>
+            <button class="btn btn-register" type="submit" onclick="generate()" >Generate Token</button>
     </div>
     <div class="logo-container"><img class="ssd_logo" src="../search/ssd_logo.avif" alt="ssd_logo" style="width: 16rem; height: auto; right: 3%; bottom: 5%;
         position: absolute;"></div>
 </body>
+<script src="apitoken.js"></script>
 </html>
