@@ -34,7 +34,7 @@ document.getElementById("txtarea").value = dit[0].product_name;
   let headersList = {
     "X-Requested-With": "XMLHttp",
     "Content-Type": "application/json",
-    "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3MDIyMTE2NywibmJmIjoxNjcwMjIxMTY3LCJqdGkiOiJ0T1B4b3BuemR2dGdXMUNmIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.7N2ztr_V1Cn6_HqwIliqD_GSVwl5Q8XxEIGHJ5LWmlE"
+    "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3MTE1Nzk2MiwibmJmIjoxNjcxMTU3OTYyLCJqdGkiOiJqUGtMNmQ4YWRqaGFISVNGIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.5_MNE0xzGJSPhRBIaloytMBDaJqa26IeF5geTbYKPZ4"
   };
   await fetch("http://127.0.0.1:8000/api/auth/ssd/search-product/" + pid1, {
     method: "GET",

@@ -2,12 +2,8 @@
  let em = document.getElementById('apiemail');
  let ps = document.getElementById('apipassword');
  let apitoken = $("#apitoken");
+
  
-
-
-
-
-
 function generate(){
 
     let email = em.value;
@@ -45,3 +41,5 @@ function setText(){
   // apitoken.innerText = dtt;
   
 }
+
+

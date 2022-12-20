@@ -71,7 +71,6 @@ textarea::placeholder:focus {
 
 
 .btn{
-  /* width: 50% !important; */
   height: 4rem;
   font-family: Helvetica, sans-serif;
   font-weight: 600 !important;
@@ -87,7 +86,6 @@ textarea::placeholder:focus {
   display: flex;
   padding-top: 15px;
   padding: 0;
-  /* margin-right: 50%; */
 }
 
 .btn-register{
