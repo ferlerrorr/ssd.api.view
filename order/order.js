@@ -9,32 +9,32 @@ function sleep(milliseconds) {
     currentDate = Date.now();
   } while (currentDate - date < milliseconds);
 }
-localStorage.setItem("varId1" , "");
-localStorage.setItem("qty1" , "");
-localStorage.setItem("varId2" , "");
-localStorage.setItem("qty2" , "");
-localStorage.setItem("varId3" , "");
-localStorage.setItem("qty3" , "");
-productsearch1(),
-productsearch2(),
-productsearch3();
+localStorage.setItem("varId1", "");
+localStorage.setItem("qty1", "");
+localStorage.setItem("varId2", "");
+localStorage.setItem("qty2", "");
+localStorage.setItem("varId3", "");
+localStorage.setItem("qty3", "");
+productsearch1(), productsearch2(), productsearch3();
 setInterval(availability1, 6);
 setInterval(availability2, 6);
 setInterval(availability3, 6);
-document.getElementById("searchTerm").value = localStorage.getItem("searchTerm");
+document.getElementById("searchTerm").value =
+  localStorage.getItem("searchTerm");
 /** ##Sleep function*/
 
 async function productsearch1() {
-let arr  = localStorage.getItem("searchdata");
-let dit = JSON.parse(arr);
-let pid1 = document.getElementById("pid1").value = dit[0].product_id;
-document.getElementById("txtarea").value = dit[0].product_name;
+  let arr = localStorage.getItem("searchdata");
+  let dit = JSON.parse(arr);
+  let pid1 = (document.getElementById("pid1").value = dit[0].product_id);
+  document.getElementById("txtarea").value = dit[0].product_name;
   // let pid= 7996083306790;
   //Active Queue
   let headersList = {
     "X-Requested-With": "XMLHttp",
     "Content-Type": "application/json",
-    "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3MTE1Nzk2MiwibmJmIjoxNjcxMTU3OTYyLCJqdGkiOiJqUGtMNmQ4YWRqaGFISVNGIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.5_MNE0xzGJSPhRBIaloytMBDaJqa26IeF5geTbYKPZ4"
+    Authorization:
+      "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3MTE1Nzk2MiwibmJmIjoxNjcxMTU3OTYyLCJqdGkiOiJqUGtMNmQ4YWRqaGFISVNGIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.5_MNE0xzGJSPhRBIaloytMBDaJqa26IeF5geTbYKPZ4",
   };
   await fetch("http://127.0.0.1:8000/api/auth/ssd/search-product/" + pid1, {
     method: "GET",
@@ -44,13 +44,13 @@ document.getElementById("txtarea").value = dit[0].product_name;
     .then((json) => {
       localStorage.setItem("qty1", json.inventory_quantity);
       localStorage.setItem("varId1", json.variant_id);
-    })
+    });
 }
 
-async function availability1(){
+async function availability1() {
   let quantity1 = localStorage.getItem("qty1");
   let pqty1 = parseInt(document.getElementById("quantity1").value);
-if (quantity1 == 0) {
+  if (quantity1 == 0) {
     document.getElementById("availability1").textContent = "Unavailable";
   } else if (quantity1 < pqty1) {
     document.getElementById("availability1").textContent = "Insufficient";
@@ -59,18 +59,18 @@ if (quantity1 == 0) {
   }
 }
 
-
 async function productsearch2() {
-  let arr = localStorage.getItem("searchdata")
+  let arr = localStorage.getItem("searchdata");
   let dit = JSON.parse(arr);
-  let pid2 = document.getElementById("pid2").value = dit[1].product_id;
+  let pid2 = (document.getElementById("pid2").value = dit[1].product_id);
   document.getElementById("txtarea1").value = dit[1].product_name;
   let headersList = {
     "X-Requested-With": "XMLHttp",
     "Content-Type": "application/json",
-    "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3MDIyMTE2NywibmJmIjoxNjcwMjIxMTY3LCJqdGkiOiJ0T1B4b3BuemR2dGdXMUNmIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.7N2ztr_V1Cn6_HqwIliqD_GSVwl5Q8XxEIGHJ5LWmlE"
+    Authorization:
+      "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3MDIyMTE2NywibmJmIjoxNjcwMjIxMTY3LCJqdGkiOiJ0T1B4b3BuemR2dGdXMUNmIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.7N2ztr_V1Cn6_HqwIliqD_GSVwl5Q8XxEIGHJ5LWmlE",
   };
- await fetch("http://127.0.0.1:8000/api/auth/ssd/search-product/" + pid2, {
+  await fetch("http://127.0.0.1:8000/api/auth/ssd/search-product/" + pid2, {
     method: "GET",
     headers: headersList,
   })
@@ -81,7 +81,7 @@ async function productsearch2() {
     });
 }
 
-async function availability2(){
+async function availability2() {
   let quantity2 = localStorage.getItem("qty2");
   let pqty2 = parseInt(document.getElementById("quantity2").value);
   if (quantity2 == 0) {
@@ -94,17 +94,18 @@ async function availability2(){
 }
 
 async function productsearch3() {
-  let arr  = localStorage.getItem("searchdata")
+  let arr = localStorage.getItem("searchdata");
   let dit = JSON.parse(arr);
-  let pid3 = document.getElementById("pid3").value = dit[2].product_id;
+  let pid3 = (document.getElementById("pid3").value = dit[2].product_id);
   document.getElementById("txtarea2").value = dit[2].product_name;
   //Active Queue
   let headersList = {
     "X-Requested-With": "XMLHttp",
     "Content-Type": "application/json",
-    "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3MDIyMTE2NywibmJmIjoxNjcwMjIxMTY3LCJqdGkiOiJ0T1B4b3BuemR2dGdXMUNmIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.7N2ztr_V1Cn6_HqwIliqD_GSVwl5Q8XxEIGHJ5LWmlE"
+    Authorization:
+      "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3MDIyMTE2NywibmJmIjoxNjcwMjIxMTY3LCJqdGkiOiJ0T1B4b3BuemR2dGdXMUNmIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.7N2ztr_V1Cn6_HqwIliqD_GSVwl5Q8XxEIGHJ5LWmlE",
   };
- await fetch("http://127.0.0.1:8000/api/auth/ssd/search-product/" + pid3, {
+  await fetch("http://127.0.0.1:8000/api/auth/ssd/search-product/" + pid3, {
     method: "GET",
     headers: headersList,
   })
@@ -113,10 +114,9 @@ async function productsearch3() {
       localStorage.setItem("qty3", json.inventory_quantity);
       localStorage.setItem("varId3", json.variant_id);
     });
+}
 
-  }
-
-async function availability3(){
+async function availability3() {
   let quantity3 = localStorage.getItem("qty3");
   let pqty3 = parseInt(document.getElementById("quantity3").value);
   if (quantity3 == 0) {
@@ -128,7 +128,7 @@ async function availability3(){
   }
 }
 
-function order(){
+function order() {
   var url = "http://127.0.0.1:8000/api/ssd/products/order";
   let pqty1 = parseInt(document.getElementById("quantity1").value);
   var varId1 = parseInt(localStorage.getItem("varId1"));
@@ -141,16 +141,22 @@ function order(){
 
   var xhr = new XMLHttpRequest();
   xhr.open("POST", url);
-  
+
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.setRequestHeader("X-Requested-With", "XMLHttp");
-  xhr.setRequestHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3MDU0OTEwMSwibmJmIjoxNjcwNTQ5MTAxLCJqdGkiOiI5SXNGMTlsRG1wU2xDVUg0Iiwic3ViIjozMiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.8-cbG1NiWbC_C2vHnisBQ2jpn0DP6pnj4fKcCHibGgU");
-  
+  xhr.setRequestHeader(
+    "Authorization",
+    "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3MDU0OTEwMSwibmJmIjoxNjcwNTQ5MTAxLCJqdGkiOiI5SXNGMTlsRG1wU2xDVUg0Iiwic3ViIjozMiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.8-cbG1NiWbC_C2vHnisBQ2jpn0DP6pnj4fKcCHibGgU"
+  );
+
   xhr.onreadystatechange = function () {
-     if (xhr.readyState === 4) {
-        window.open(xhr.responseText);
-     }};
-  
+    if (xhr.readyState === 4) {
+      let data = JSON.parse(xhr.responseText);
+
+      window.open(data.url);
+    }
+  };
+
   var data = `{
       "full_name": {
       "firstname": "Ferl John",
@@ -203,6 +209,6 @@ function order(){
       "card_number": "003-2233-9222"
     }
   }`;
-  
+
   xhr.send(data);
 }
